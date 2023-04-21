@@ -19,10 +19,7 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 
 router.delete('/deleteMe', authController.protect, userController.deleteMe);
 
-router
-  .route('/')
-  .get(userController.getAllUsers)
-  .post(userController.createUser);
+router.route('/').get(userController.getAllUsers);
 
 router
   .route('/:id')
